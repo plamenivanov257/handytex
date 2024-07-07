@@ -1,0 +1,12 @@
+\usepackage[setpagesize=false,colorlinks=true,linkcolor=blue,citecolor=blue]{hyperref}  % URL formatting (makes clickable links)
+% Wikipedia (Vector 2022) colours
+%\hypersetup{linkcolor=[rgb]{0.2,0.4,0.8}}
+%\hypersetup{citecolor=[rgb]{0.2,0.4,0.8}}
+\usepackage{cleveref}
+\crefformat{section}{\S#2#1#3} 
+\crefformat{subsection}{\S#2#1#3}
+\crefformat{subsubsection}{\S#2#1#3}
+\crefformat{figure}{figure~#2#1#3}
+\crefformat{equation}{(#2#1#3)}
+\crefrangeformat{equation}{(#3#1#4)--(#5#2#6)}
+\crefrangeformat{figure}{figures #3#1#4--#5#2#6}

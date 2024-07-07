@@ -1,0 +1,26 @@
+\newcommand{\underbox}[3]{\underbrace{#1}_{\parbox{#2}{\begin{center}\small #3\end{center}}}}
+
+% Editing and highlighting
+\newcommand{\highlight}[1]{\colorbox{yellow}{#1}} 
+\newcommand{\remove}[1]{{\color{lightgray} #1}}
+\newcommand{\add}[1]{{\color{red} #1}}
+\newcommand{\edit}[2]{\remove{#1} \add{#2}}
+\newcommand{\comment}[1]{{\color{red} {\itshape #1}}}
+
+% American to British spelling shortcuts
+% to use this, write, e.g., \mbox{normali\sation}
+%\ifdefined\USspelling
+%	\newcommand{\ise}{ize}
+%	\newcommand{\sation}{zation} 
+%	\newcommand{\our}{or}
+%	\newcommand{\sed}{zed}
+%	\newcommand{\tre}{ter}
+%	\newcommand{\qmarks}[1]{``#1''}
+%\else
+%	\newcommand{\ise}{ise}
+%	\newcommand{\sation}{sation} 
+%	\newcommand{\our}{our}
+%	\newcommand{\sed}{sed}
+%	\newcommand{\tre}{tre}
+%	\newcommand{\qmarks}[1]{`#1'}
+%\fi

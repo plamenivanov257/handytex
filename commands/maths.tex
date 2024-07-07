@@ -1,0 +1,311 @@
+% Options
+
+% delta spacing (use \! to bring deltas closer to symbols, work better with some CMU symbols)
+\newcommand{\deltaclose}{\delta \!}
+%\newcommand{\deltaclose}{\delta}
+% Generic
+\newcommand{\order}[1]{O\left(#1\right)}
+\newcommand{\orderinline}[1]{O(#1)}
+\newcommand{\rmd}{\text{d}}
+\newcommand{\der}[2]{\frac{\rmd #1}{\rmd #2}}
+\newcommand{\re}{\text{Re}}
+\newcommand{\im}{\text{Im}}
+\newcommand{\abs}[1]{\left\rvert#1\right\rvert}
+\newcommand{\absinline}[1]{\rvert#1\rvert}
+
+% Sets
+\newcommand{\naturals}{\mathbb{N}}
+\newcommand{\reals}{\mathbb{R}}
+\newcommand{\integers}{\mathbb{Z}}
+\newcommand{\rationals}{\mathbb{Q}}
+\newcommand{\complex}{\mathbb{C}}
+
+% Partial derivatives
+\newcommand{\pt}{\partial_t}
+\newcommand{\px}{\partial_x}
+\newcommand{\py}{\partial_y}
+\newcommand{\pz}{\partial_z}
+
+\ifdefined\partd
+	\renewcommand{\partd}[3][]{\frac{{\partial^{#1} #2}}{{\partial #3}^{#1}}}
+\else
+	\newcommand{\partd}[3][]{\frac{{\partial^{#1} #2}}{{\partial #3}^{#1}}}
+\fi
+
+\newcommand{\partdfix}[3]{\left.\frac{\partial #1}{\partial #2}\right\rvert_{#3}}
+
+% Vectors and tensorsS
+\ifdefined\vec  % Make sure we got bold vectors
+	\renewcommand{\vec}[1]{\boldsymbol{#1}}
+\else
+	\newcommand{\vec}[1]{\boldsymbol{#1}}
+\fi
+
+\newcommand{\tens}[1]{\mathbf{#1}}
+
+\newcommand{\uvec}[1]{{\hat{\boldsymbol{#1}}}}
+\providecommand{\bcdot}{\vec{\cdot}}
+
+% Vector derivatives
+\newcommand{\grad}{{\vec{\nabla}}}
+\newcommand{\gradperp}{\grad_\perp}
+\ifdefined\div
+	\renewcommand{\div}{{\vec{nabla}}}
+\else
+	\newcommand{\div}{{\vec{nabla}}}
+\fi
+
+% Generic vectors
+\ifdefined\vr
+	\renewcommand{\vr}{{\vec{r}}}
+\else
+	\newcommand{\vr}{{\vec{r}}}
+\fi
+\newcommand{\vp}{{\vec{p}}}
+\newcommand{\vq}{{\vec{q}}}
+\newcommand{\vk}{{\vec{k}}}
+\newcommand{\vv}{{\vec{v}}}
+\newcommand{\vkperp}{{\vk_\perp}}
+\newcommand{\kperp}{k_\perp}
+\newcommand{\kpar}{k_\parallel}
+\newcommand{\vperp}{v_\perp}
+\newcommand{\vvperp}{\vv_\perp}
+\newcommand{\vpar}{v_\parallel}
+\newcommand{\hvpar}{\hat v_\parallel}
+
+% Integrals
+\newcommand{\intr}[1][3]{{\int \rmd^{#1} \vec{r} \ }}
+\newcommand{\intR}[1][3]{{\int \rmd^{#1} \vec{R} \ }}
+\newcommand{\intv}[1][3]{{\int \rmd^{#1} \vec{v} \ }}
+\newcommand{\rmdint}[2][]{{\rmd^{#1} #2 \: }}
+\newcommand{\intinf}[1]{\int_{-\infty}^{+\infty} \rmd {#1} \ }
+\newcommand{\inthalfinf}[1]{\int_{0}^{+\infty} \rmd {#1} \ }
+
+
+% Plasma-specific stuff
+
+% Species parameters
+\newcommand{\s}{s}
+\newcommand{\vth}{v_\text{th}}
+\newcommand{\vths}{v_{\text{th}\s}}
+\newcommand{\vthi}{v_{\text{th}i}}
+\newcommand{\vthe}{v_{\text{th}e}}
+
+% Length scales
+\newcommand{\mfp}{\lambda_\text{mfp}}
+\newcommand{\ope}{\omega_{\text{p}e}}
+\newcommand{\lDe}{\lambda_{\text{D}e}}
+\newcommand{\rhos}[1][\s]{\rho_{#1}}
+\newcommand{\rhoi}{\rhos[i]}
+\newcommand{\rhoe}{\rhos[e]}
+\newcommand{\ds}[1][\s]{d_{#1}}
+\newcommand{\de}{\ds[e]}
+\newcommand{\di}{\ds[i]}
+
+
+\newcommand{\qs}[1][\s]{q_{#1}}
+\newcommand{\qi}{\qs[i]}
+
+\newcommand{\ms}[1][\s]{m_{#1}}
+\newcommand{\me}{\ms[e]}
+\newcommand{\mi}{\ms[i]}
+
+% JPP WARNING: This conflicts wih the JPP template unless one removes some unused crap
+\newcommand{\ns}[1][\s]{n_{#1}}
+
+\newcommand{\betas}[1][\s]{\beta_{#1}}
+\newcommand{\betae}{\betas[e]}
+\newcommand{\betai}{\betas[i]}
+
+% These already mean something...
+\let\neorig\ne
+\renewcommand{\ne}{\ns[e]}
+\let\niorig\ni
+\renewcommand{\ni}{\ns[i]}
+
+\newcommand{\nos}[1][\s]{n_{0#1}}
+\newcommand{\noe}{\nos[e]}
+\newcommand{\noi}{\nos[i]}
+\newcommand{\dns}[1][\s]{\delta n_{#1}}
+\newcommand{\dne}{\dns[e]}
+\newcommand{\dni}{\dns[i]}
+
+\newcommand{\Ts}[1][\s]{T_{#1}}
+\newcommand{\Te}{\Ts[e]}
+\newcommand{\Ti}{\Ts[i]}
+\newcommand{\Tos}[1][\s]{T_{0#1}}
+\newcommand{\Toe}{\Tos[e]}
+\newcommand{\Toi}{\Tos[i]}
+\newcommand{\dTos}[1][\s]{\delta T_{#1}}
+\newcommand{\dToe}{\dTos[e]}
+\newcommand{\dToi}{\dTos[i]}
+
+\newcommand{\ps}[1][\s]{p_{#1}}
+\newcommand{\pe}{\ps[e]}
+%\newcommand{\pi}{\ps[i]}  % clearly a bad idea, right? :)
+\newcommand{\pion}{\ps[i]}
+\newcommand{\pos}[1][\s]{p_{0#1}}
+\newcommand{\poe}{\pos[e]}
+\newcommand{\poi}{\pos[i]}
+\newcommand{\dps}[1][\s]{\delta p_{#1}}
+\newcommand{\dpe}{\dps[e]}
+\newcommand{\dpi}{\dps[i]}
+
+
+\newcommand{\phinorm}{\varphi}
+\newcommand{\phinormk}{\varphi_\vk}
+\newcommand{\phinormkp}{\hat{\varphi}_\vk}
+
+
+% Distributions
+\newcommand{\fs}{f_{\s}}
+\newcommand{\fos}{f_{0\s}}
+\newcommand{\Fs}{F_{\s}}
+\newcommand{\Fns}[1][]{F_{#1\s}}
+\newcommand{\Fos}{F_{0\s}}
+\newcommand{\dfs}{\delta \! f_{\s}}
+\newcommand{\dfns}[1][]{\delta \! f_{#1\s}}
+
+\newcommand{\fe}{f_{e}}
+\newcommand{\foe}{f_{0e}}
+\newcommand{\Fe}{F_{e}}
+\newcommand{\Foe}{F_{0e}}
+\newcommand{\dfe}{\delta \!_f_{e}}
+
+\newcommand{\fion}{f_{i}}  % annoying but \fi is the endif statement in TeX...
+\newcommand{\foi}{f_{0i}}
+\newcommand{\Fi}{F_{i}}
+\newcommand{\Foi}{F_{0i}}
+\newcommand{\dfi}{\delta \!_f_{i}}
+
+% GK
+\newcommand{\rhostar}{\rho_*}
+\newcommand{\kperprhoisq}{\kperp^2\rhoi^2}
+\newcommand{\kperprhoisqq}{\kperp^4\rhoi^4}
+\newcommand{\kperprhoesq}{\kperp^2\rhoe^2}
+\newcommand{\kperprhoesqq}{\kperp^4\rhoe^4}
+\newcommand{\kperpdesq}{\kperp^2\de^2}
+\newcommand{\pbra}[2]{\left\lbrace #1, #2 \right\rbrace}
+\newcommand{\pbrainline}[2]{\lbrace #1, #2 \rbrace}
+\newcommand{\vRs}[1][\s]{{\vec{R}_{#1}}}
+\newcommand{\vRe}{{\vec{R}_e}}
+\newcommand{\vRi}{{\vec{R}_i}}
+\newcommand{\hs}[1][\s]{h_{#1}}
+\newcommand{\he}{\hs[e]}
+\newcommand{\hi}{\hs[i]}
+\newcommand{\hsk}[1][\s]{h_{{#1}, \vk}}
+\newcommand{\hek}{h_{e, \vk}}
+\newcommand{\hik}{h_{i, \vk}}
+\newcommand{\taueq}{\tau_\text{eq}}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\ueone}{\uvec{e}_1}
+\newcommand{\uetwo}{\uvec{e}_2}
+\newcommand{\dphi}{\delta\phi}
+\newcommand{\vkappas}{\vec{V}_{\!{\kappa\s}}}
+\newcommand{\vgradBs}{\vec{V}_{\!{\nabla \! B\s}}}
+
+% Drifts
+\newcommand{\vchi}{\vec{V}_{\!\chi}}
+\newcommand{\vchiRs}{\avgRs{\vec{V}_{\!\chi}}}
+\newcommand{\vds}[1][\s]{\vec{V}_{\!\text{d}#1}}
+\newcommand{\vde}{\vds[e]}
+\newcommand{\vdi}{\vds[i]}
+
+
+% Scalars
+\newcommand{\Bo}{B_0}
+\newcommand{\Eo}{E_0}
+\newcommand{\Apar}{A_\parallel}
+\newcommand{\Aparnorm}{\mathcal{A}}
+\newcommand{\dApar}{\deltaclose A_\parallel}
+\newcommand{\dAx}{\deltaclose A_x}
+\newcommand{\dAy}{\deltaclose A_y}
+\newcommand{\dBpar}{\deltaclose B_\parallel}
+\newcommand{\dBx}{\deltaclose B_x}
+\newcommand{\dBy}{\deltaclose B_y}
+\newcommand{\dEpar}{\deltaclose E_\parallel}
+\newcommand{\upars}[1][\s]{u_{\parallel{#1}}}
+\newcommand{\upar}{\upars[\relax]}
+\newcommand{\upare}{\upars[e]}
+\newcommand{\upari}{\upars[i]}
+
+% Vectors
+\newcommand{\vR}{{\vec{R}}}
+\newcommand{\vE}{\vec{E}}
+\newcommand{\vB}{\vec{B}}
+\newcommand{\ub}{\uvec{b}}
+\newcommand{\ubo}{\uvec{b}_0}
+\newcommand{\vJ}{\vec{J}}
+\newcommand{\vA}{\vec{A}}
+\newcommand{\vEo}{\vec{E}_0}
+\newcommand{\vBo}{\vec{B}_0}
+\newcommand{\vAo}{\vec{A}_0}
+\newcommand{\vJo}{\vec{J}_0}
+\newcommand{\vdE}{\deltaclose\vec{E}}
+\newcommand{\vdB}{\deltaclose\vec{B}}
+\newcommand{\vdBperp}{\deltaclose \vec{B}_\perp}
+\newcommand{\vdJ}{\delta\vec{J}}
+\newcommand{\vdA}{\deltaclose\vec{A}}
+\newcommand{\exb}{\(\vE\times\vB\)}
+\newcommand{\vrhos}[1][\s]{\vec{\rho}_{#1}}
+\newcommand{\vrhoe}{\vrhos[e]}
+\newcommand{\vrhoi}{\vrhos[i]}
+
+% Averages
+\newcommand{\avgRs}[2][\s]{\!\left\langle #2 \right\rangle_{\vRs[#1]}}
+\newcommand{\avgRe}[1]{\!\left\langle #1 \right\rangle_{\vRe}}
+\newcommand{\avgRi}[1]{\!\left\langle #1 \right\rangle_{\vRi}}
+\newcommand{\avgRsinline}[2][\s]{\langle #2 \rangle_{\vRs[#1]}}
+\newcommand{\avgReinline}[1]{\langle #1 \rangle_{\vRe}}
+\newcommand{\avgRiinline}[1]{\langle #1 \rangle_{\vRi}}
+\newcommand{\avgr}[1]{\!\left\langle #1 \right\rangle_{\vec{r}}}
+\newcommand{\avgrinline}[1]{\langle #1 \rangle_{\vec{r}}}
+
+% Equilibrium length scales
+\newcommand{\LB}{L_B}
+\newcommand{\Ln}[1][]{L_{n_{#1}}}
+\newcommand{\LT}[1][]{L_{T_{#1}}}
+\newcommand{\LTs}{\LT[\s]}
+\newcommand{\LTe}{\LT[e]}
+\newcommand{\LTi}{\LT[i]}
+\newcommand{\Lns}{\Ln[\s]}
+\newcommand{\Lne}{\Ln[e]}
+\newcommand{\Lni}{\Ln[i]}
+
+% Timescales
+\newcommand{\Omegas}[1][\s]{\Omega_{#1}}
+\newcommand{\Omegae}{\Omegas[e]}
+\newcommand{\Omegai}{\Omegas[i]}
+
+\newcommand{\omegasts}[1][\s]{\omega_{*{#1}}}
+\newcommand{\omegaste}{\omegasts[e]}
+\newcommand{\omegasti}{\omegasts[i]}
+
+\newcommand{\omegaTs}[1][\s]{\omega_{T{#1}}}
+\newcommand{\omegaTe}{\omegaTs[e]}
+\newcommand{\omegaTi}{\omegaTs[i]}
+
+\newcommand{\omegads}[1][\s]{\omega_{\text{d}#1}}
+\newcommand{\omegade}{\omegads[e]}
+\newcommand{\omegadi}{\omegads[i]}
+
+\newcommand{\zetas}[1][\s]{\zeta_{#1}}
+\newcommand{\zetae}{\zetas[e]}
+\newcommand{\zetai}{\zetas[i]}
+
+\newcommand{\zetasts}[1][\s]{\zeta_{*#1}}
+\newcommand{\zetaste}{\zetasts[e]}
+\newcommand{\zetasti}{\zetasts[i]}
+\newcommand{\zetast}{\zetasts[\relax]}
+
+\newcommand{\zetaTs}[1][\s]{\zeta_{T#1}}
+\newcommand{\zetaTe}{\zetaTs[e]}
+\newcommand{\zetaTi}{\zetaTs[i]}
+\newcommand{\zetaT}{\zetaTs[\relax]}
+
+\newcommand{\zetads}[1][\s]{\zeta_{\text{d}#1}}
+\newcommand{\zetade}{\zetads[e]}
+\newcommand{\zetadi}{\zetads[i]}
+\newcommand{\zetad}{\zetads[\relax]}
+
+	
