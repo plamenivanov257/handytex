@@ -76,6 +76,7 @@
 % Integrals
 \newcommand{\intr}[1][3]{{\int \rmd^{#1} \vec{r} \ }}
 \newcommand{\intR}[1][3]{{\int \rmd^{#1} \vec{R} \ }}
+\newcommand{\intRs}[1][\s]{{\int \rmd^3 \vec{R}_{#1} \ }}
 \newcommand{\intv}[1][3]{{\int \rmd^{#1} \vec{v} \ }}
 \newcommand{\rmdint}[2][]{{\rmd^{#1} #2 \: }}
 \newcommand{\intinf}[1]{\int_{-\infty}^{+\infty} \rmd {#1} \ }
@@ -136,9 +137,15 @@
 \newcommand{\Tos}[1][\s]{T_{0#1}}
 \newcommand{\Toe}{\Tos[e]}
 \newcommand{\Toi}{\Tos[i]}
-\newcommand{\dTos}[1][\s]{\delta T_{#1}}
-\newcommand{\dToe}{\dTos[e]}
-\newcommand{\dToi}{\dTos[i]}
+\newcommand{\dTs}[1][\s]{\delta T_{#1}}
+\newcommand{\dTe}{\dTs[e]}
+\newcommand{\dTi}{\dTs[i]}
+\newcommand{\dTpars}[1][\s]{\delta T_{\parallel {#1}}}
+\newcommand{\dTpare}{\dTpars[e]}
+\newcommand{\dTpari}{\dTpars[i]}
+\newcommand{\dTperps}[1][\s]{\delta T_{\perp {#1}}}
+\newcommand{\dTperpe}{\dTperps[e]}
+\newcommand{\dTperpi}{\dTperps[i]}
 
 \newcommand{\ps}[1][\s]{p_{#1}}
 \newcommand{\pe}{\ps[e]}
@@ -152,9 +159,6 @@
 \newcommand{\dpi}{\dps[i]}
 
 
-\newcommand{\phinorm}{\varphi}
-\newcommand{\phinormk}{\varphi_\vk}
-\newcommand{\phinormkp}{\hat{\varphi}_\vk}
 
 
 % Distributions
@@ -170,7 +174,7 @@
 \newcommand{\foe}{f_{0e}}
 \newcommand{\Fe}{F_{e}}
 \newcommand{\Foe}{F_{0e}}
-\newcommand{\dfe}{\delta \!_f_{e}}
+\newcommand{\dfe}{\delta \! f_{e}}
 
 \newcommand{\fion}{f_{i}}  % annoying but \fi is the endif statement in TeX...
 \newcommand{\foi}{f_{0i}}
@@ -194,8 +198,11 @@
 \newcommand{\he}{\hs[e]}
 \newcommand{\hi}{\hs[i]}
 \newcommand{\hsk}[1][\s]{h_{{#1}, \vk}}
-\newcommand{\hek}{h_{e, \vk}}
-\newcommand{\hik}{h_{i, \vk}}
+\newcommand{\hek}{\hsk[e]}
+\newcommand{\hik}{\hsk[i]}
+\newcommand{\hskp}[1][\s]{\hat{h}_{{#1}, \vk}}
+\newcommand{\hekp}{\hskp[e]}
+\newcommand{\hikp}{\hskp[i]}
 \newcommand{\taueq}{\tau_\text{eq}}
 \newcommand{\eps}{\varepsilon}
 \newcommand{\ueone}{\uvec{e}_1}
@@ -215,8 +222,13 @@
 % Scalars
 \newcommand{\Bo}{B_0}
 \newcommand{\Eo}{E_0}
+\newcommand{\phinorm}{\varphi}
+\newcommand{\phinormk}{\varphi_\vk}
+\newcommand{\phinormkp}{\hat{\varphi}_\vk}
 \newcommand{\Apar}{A_\parallel}
 \newcommand{\Aparnorm}{\mathcal{A}}
+\newcommand{\Aparnormk}{\mathcal{A}_\vk}
+\newcommand{\Aparnormkp}{\hat{\mathcal{A}}_\vk}
 \newcommand{\dApar}{\deltaclose A_\parallel}
 \newcommand{\dAx}{\deltaclose A_x}
 \newcommand{\dAy}{\deltaclose A_y}
