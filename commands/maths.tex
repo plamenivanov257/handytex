@@ -1,5 +1,9 @@
 % Import rm symbols
-\input{rmsymbols}
+\ifdefined\handydir
+	\input{\handydir/commands/rmsymbols}
+\else
+	\input{handytex/commands/rmsymbols}
+\fi
 
 % Close spacing (use \! to bring certain symbols closer together, work better with fonts but not others. Enable as needed)
 \newcommand{\closesymbol}{\!}
@@ -97,9 +101,9 @@
 % Species parameters
 \newcommand{\s}{s}
 \newcommand{\vth}{v_\text{th}}
-\newcommand{\vths}{v_{\text{th}\s}}
-\newcommand{\vthi}{v_{\text{th}i}}
-\newcommand{\vthe}{v_{\text{th}e}}
+\newcommand{\vths}[1][\s]{v_{\text{th}{#1}}}
+\newcommand{\vthi}{\vths[i]}
+\newcommand{\vthe}{\vths[e]}
 
 % Length scales
 \newcommand{\mfp}{\lambda_\text{mfp}}
