@@ -205,6 +205,8 @@
 \newcommand{\dfek}{\dfsk[e]}
 \newcommand{\dfik}{\dfsk[i]}
 
+\newcommand{\dfskperp}[1][\s]{\delta\closesymbol\fourier{f}_{{#1}\vkperp}}
+
 % GK
 \newcommand{\rhostar}{\rho_*}
 \newcommand{\kperprhoisq}{\kperp^2\rhoi^2}
@@ -245,10 +247,10 @@
 \newcommand{\mus}{\mu_\s}
 
 % Drifts
-\newcommand{\ve}{\vec{V}_{\closesymbol E}}
-\newcommand{\vchi}{\vec{V}_{\closesymbol\chi}}
-\newcommand{\vchiRs}[1][\s]{\avgRs[#1]{\vec{V}_{\closesymbol\chi}}}
-\newcommand{\vds}[1][\s]{\vec{V}_{\closesymbol\text{d}#1}}
+\newcommand{\ve}{\vec{v}_{E}}
+\newcommand{\vchi}{\vec{v}_{\chi}}
+\newcommand{\vchiRs}[1][\s]{\avgRs[#1]{\vec{v}_{\chi}}}
+\newcommand{\vds}[1][\s]{\vec{v}_{\text{d}#1}}
 \newcommand{\vde}{\vds[e]}
 \newcommand{\vdi}{\vds[i]}
 
@@ -312,6 +314,9 @@
 \newcommand{\vrhos}[1][\s]{\vec{\rho}_{#1}}
 \newcommand{\vrhoe}{\vrhos[e]}
 \newcommand{\vrhoi}{\vrhos[i]}
+
+\newcommand{\vdBk}{\delta \closesymbol \vec{B}_\vk}
+\newcommand{\vdBkperp}{\delta \closesymbol \vec{B}_\vkperp}
 
 % Averages
 \newcommand{\avgRs}[2][\s]{\closesymbol\left\langle #2 \right\rangle_{\vRs[#1]}}
