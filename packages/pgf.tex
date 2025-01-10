@@ -1,0 +1,5 @@
+% Sets up pgf for use with matplotlib files
+\usepackage{import}
+
+\def\mathdefault#1{#1}
+\newcommand{\importpgf}[2]{\begingroup\import{#1}{#2}\endgroup}

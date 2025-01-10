@@ -6,8 +6,11 @@
 \fi
 
 % Close spacing (use \! to bring certain symbols closer together, work better with fonts but not others. Enable as needed)
-\newcommand{\closesymbol}{\!}
-%\newcommand{\closesymbol}{\relax}
+\ifdefined\closesymbol
+	\relax
+\else
+	\def\closesymbol{\relax}
+\fi
 
 \newcommand{\fourier}[1]{\tilde{#1}}  % Fourier-transformed functions
 \renewcommand{\fourier}[1]{#1}  % remove the tilde from Fourier-space quantities
