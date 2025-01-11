@@ -15,7 +15,11 @@
 \newcommand{\fourier}[1]{\tilde{#1}}  % Fourier-transformed functions
 \renewcommand{\fourier}[1]{#1}  % remove the tilde from Fourier-space quantities
 
-\newcommand{\laplace}[1]{\hat{#1}}  % Laplace-transformed functions
+\ifdefined\laplace
+	\renewcommand{\laplace}[1]{\hat{#1}}  % Laplace-transformed functions
+\else
+	\newcommand{\laplace}[1]{\hat{#1}}  % Laplace-transformed functions
+\fi
 
 
 % Generic
@@ -79,7 +83,13 @@
 \newcommand{\vp}{{\vec{p}}}
 \newcommand{\vq}{{\vec{q}}}
 \newcommand{\vk}{{\vec{k}}}
+
+\ifdefined\vv
+\renewcommand{\vv}{{\vec{v}}}
+\else
 \newcommand{\vv}{{\vec{v}}}
+\fi
+
 \newcommand{\vkperp}{{\vk_\perp}}
 \newcommand{\kperp}{k_\perp}
 \newcommand{\kpar}{k_\parallel}
