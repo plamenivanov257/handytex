@@ -207,12 +207,12 @@
 
 
 % Distributions
-\newcommand{\fs}{f_{\s}}
-\newcommand{\fos}{f_{0\s}}
-\newcommand{\Fs}{F_{\s}}
+\newcommand{\fs}[1][\s]{f_{#1}}
+\newcommand{\fos}[1][\s]{f_{0#1}}
+\newcommand{\Fs}[1][\s]{F_{#1}}
 \newcommand{\Fns}[1][]{F_{#1\s}}
-\newcommand{\Fos}{F_{0\s}}
-\newcommand{\dfs}{\delta \closesymbol f_{\s}}
+\newcommand{\Fos}[1][\s]{F_{0#1}}
+\newcommand{\dfs}[1][\s]{\delta \closesymbol f_{#1}}
 \newcommand{\dfns}[1][]{\delta \closesymbol f_{#1\s}}
 
 \newcommand{\fe}{f_{e}}
@@ -269,8 +269,8 @@
 \newcommand{\vgradBs}{\vec{V}_{\closesymbol{\nabla \closesymbol B\s}}}
 
 % GK variables
-\newcommand{\es}{\varepsilon_\s}
-\newcommand{\mus}{\mu_\s}
+\newcommand{\es}[1][\s]{\varepsilon_{#1}}
+\newcommand{\mus}[1][\s]{\mu_{#1}}
 
 % Drifts
 \newcommand{\ve}{\vec{v}_{E}}
