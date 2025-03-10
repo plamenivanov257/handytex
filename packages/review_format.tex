@@ -3,5 +3,8 @@
 
 % Make pretty enumerates for review responses
 \usepackage{enumitem}
-\setlist[enumerate]{wide=0pt}
+\newlist{revenumerate}{enumerate}{1}
+\setlist[revenumerate]{wide=0pt, label=\textbf{\arabic*.},itemsep=1.5\baselineskip,
+	parsep=1\baselineskip,
+}
 \newcommand{\revitem}[1]{\item \textit{#1}}
