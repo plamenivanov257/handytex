@@ -52,7 +52,7 @@
 
 \newcommand{\partdfix}[3]{\left.\frac{\partial #1}{\partial #2}\right\rvert_{#3}}
 
-% Vectors and tensorsS
+% Vectors and tensors
 \ifdefined\vec  % Make sure we got bold vectors
 	\renewcommand{\vec}[1]{\boldsymbol{#1}}
 \else
@@ -352,9 +352,17 @@
 \newcommand{\avgReinline}[1]{\langle #1 \rangle_{\vRe}}
 \newcommand{\avgRiinline}[1]{\langle #1 \rangle_{\vRi}}
 \newcommand{\avgr}[1]{\closesymbol\left\langle #1 \right\rangle_{\vec{r}}}
-\newcommand{\avgrinline}[1]{\langle #1 \rangle_{\vec{r}}}
+\newcommand{\avgrinline}[2][\relax]{#1\langle #2 #1\rangle_{\vec{r}}}
 \newcommand{\fsa}[2][x]{\left\langle #2 \right\rangle_#1}
 \newcommand{\fsainline}[2][x]{\langle #2 \rangle_#1}
+
+\newcommand{\avgbox}[2][\relax]{#1\langle\!#1\langle#2#1\rangle_{\! \perp}#1\rangle_{\! \psi}}
+\newcommand{\avgboxinline}[1]{\avgbox{#1}}
+
+\newcommand{\paravg}[1]{\left\langle#1\right\rangle_
+	\parallel}
+\newcommand{\paravginline}[2][\relax]{#1\langle#2#1\rangle_\parallel}
+
 
 % Equilibrium length scales
 \newcommand{\LB}{L_B}
