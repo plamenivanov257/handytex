@@ -22,6 +22,38 @@
 \fi
 
 
+% Redefine Greek as slanted by default
+% Greek letters
+
+\ifdefined\slantedgreek
+    \let\rmGamma  \Gamma
+    \let\rmDelta  \Delta
+    \let\rmTheta  \Theta
+    \let\rmLambda \Lambda
+    \let\rmXi     \Xi
+    \let\rmPi     \Pi
+    \let\rmSigma  \Sigma
+    \let\rmUpsilon\Upsilon
+    \let\rmPhi    \Phi
+    \let\rmPsi    \Psi
+    \let\rmOmega  \Omega
+
+    \def\Gamma  {\varGamma}
+    \def\Delta  {\varDelta}
+    \def\Theta  {\varTheta}
+    \def\Lambda {\varLambda}
+    \def\Xi     {\varXi}
+    \def\Pi     {\varPi}
+    \def\Sigma  {\varSigma}
+    \def\Upsilon{\varUpsilon}
+    \def\Phi    {\varPhi}
+    \def\Psi    {\varPsi}
+    \def\Omega  {\varOmega}
+\fi
+
+
+
+
 % Generic
 \newcommand{\order}[1]{O\left(#1\right)}
 \newcommand{\orderinline}[1]{O(#1)}
